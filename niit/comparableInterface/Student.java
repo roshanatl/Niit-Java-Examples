@@ -1,6 +1,6 @@
 package com.niit.comparableInterface;
 
-public class Student implements Comparable<Student>, Cloneable {
+public class Student implements Comparable<Student> {
 	String Name;
 	int Id;
 	double Gpa;
