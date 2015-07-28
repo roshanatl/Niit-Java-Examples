@@ -13,6 +13,7 @@ public class ComparableMain {
 	        studentSet.add(new Student("Rtul",501,12745));
 	        studentSet.add(new Student("Utul",701,12645));
 	        System.out.println(studentSet);
+	       
 	}
 
 }
