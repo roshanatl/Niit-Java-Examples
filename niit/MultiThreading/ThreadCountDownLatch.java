@@ -21,8 +21,7 @@ class Tasks implements Runnable {
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					System.out.println("Sleep interepted .. Ignor");
 				}
 			}
 				
@@ -55,8 +54,8 @@ public class ThreadCountDownLatch {
 			e1.printStackTrace();
 		}
 		System.out.println("  *******************************Shutting down**************");
-		
-		executor.shutdown();
+		executor.shutdownNow();
+		//executor.shutdown();
 
 		System.out.println("  End of Main Thread :");
 
