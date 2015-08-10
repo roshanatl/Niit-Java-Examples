@@ -2,14 +2,14 @@ package com.niit.MultiThreading;
 
 public class ThreadSync {
 
-	private int count;
+	private static int count;
 
 	public void doWork() {
 		Thread t1 = new Thread(new Runnable() {
 
 			public void run() {
 
-				for (int i = 0; i < 25; i++) {
+				for (int i = 0; i < 1000; i++) {
 					incCount();
 				}
 			}
@@ -19,7 +19,7 @@ public class ThreadSync {
 
 			public void run() {
 
-				for (int i = 0; i < 25; i++) {
+				for (int i = 0; i < 1000; i++) {
 					incCount();
 				}
 			}
@@ -31,7 +31,7 @@ public class ThreadSync {
 			t1.join();
 			t2.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -47,8 +47,10 @@ public class ThreadSync {
 
 	}
 
-	public synchronized int incCount() {
-		return count++;
+	public synchronized void incCount() {
+		for (int i = 0; i < 1000; i++) {
+			count++;
+		}
 	}
 
 	public static void main(String[] args) {
