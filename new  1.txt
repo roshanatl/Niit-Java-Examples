@@ -1,0 +1,28 @@
+private Map<String, Object> jsonString2Map(String jsonString)
+			throws JSONException {
+		Map<String, Object> keys = Maps.newHashMap();
+		JSONObject jsonObject = new JSONObject(jsonString);
+		Iterator<?> keyset = jsonObject.keys();
+		while (keyset.hasNext()) {
+			String key = (String) keyset.next();
+			Object value = jsonObject.get(key);			
+			if (value instanceof JSONObject) {				
+				Map<String, Object> temp = jsonString2Map(value.toString());
+				keys.putAll(temp);
+			} else if (value instanceof JSONArray) {				
+				if (value.toString().charAt(1) == '{') {
+					String jString = value.toString().substring(1, value.toString().length() - 1);
+					Map<String, Object> temp = jsonString2Map(jString);
+					keys.putAll(temp);
+				} else {
+					String valueString = StringUtils.substringBetween(
+							value.toString(), "[", "]");
+					keys.put(key, valueString);
+				}
+			}
+			else {
+				keys.put(key, value);
+			}
+		}
+		return keys;
+	}
