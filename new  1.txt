@@ -27,3 +27,5 @@ private Map<String, Object> jsonString2Map(String jsonString)
 		return keys;
 	}
 String offerString = Resources.toString(Resources.getResource("massproductoffers/CompleteOffer.json"), Charsets.UTF_8)
+
+tstr600337
