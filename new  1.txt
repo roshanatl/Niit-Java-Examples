@@ -29,3 +29,4 @@ private Map<String, Object> jsonString2Map(String jsonString)
 String offerString = Resources.toString(Resources.getResource("massproductoffers/CompleteOffer.json"), Charsets.UTF_8)
 
 tstr600337
+R3RAMAS : february@123 
