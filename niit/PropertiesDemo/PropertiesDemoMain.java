@@ -10,11 +10,11 @@ public class PropertiesDemoMain {
 	try (InputStream in = new FileInputStream("src/com/niit/PropertiesDemo/example.properties")) {
 		Properties prop = new Properties();
 		prop.load(in);
-		System.out.println("####Properties.getProperty usage####");
+		System.out.println("==== Properties.getProperty usage ====");
 		System.out.println(prop.getProperty("name"));
 		System.out.println();
 
-		System.out.println("####Properties.stringPropertyNames usage####");
+		System.out.println("==== Properties.stringPropertyNames usage ====");
 		for (String property : prop.stringPropertyNames()) {
 			String value = prop.getProperty(property);
 			System.out.println(property + "=" + value);
